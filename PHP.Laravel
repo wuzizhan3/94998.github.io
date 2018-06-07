@@ -10,3 +10,16 @@
 2 使用composer安装Larvaer  
       composer安装包列表:https://packagist.org
       同样是在终端:php composer.phar create-project laravel/laravel
+      
+      //composer create-project laravel/laravel blog --prefer-dist  在blog目录下创建laravel 
+      
+      // cd .. 返回上一目录。    rm -r -f删除   ls 
+      
+      laravel框架的所有配置文件都在config目录下
+       
+      
+      
+      
+      
+      
+      
