@@ -34,7 +34,39 @@
                   - tests                 包含自动化测试文件，其中默认已经提供了一个开箱即用的PHPUnit 示例；每一个测试类都要以 Test 开头，你可以通过 phpunit 或 php vendor/bin/phpunit 命令来运行测试。       
                   - vender                应用所有通过 Composer 加载的依赖
                   
+3 homestead 安装与配置
       
+      （1）安装 VirtualBox / VMWare 与 Vagrant。   我安装的是VirtualBox 和 Vagrant
+      （2）增加Vagrant封装包。  vagrant box add laravel/homestead
+      （3）安装Homestead。     git clone https://github.com/laravel/homestead.git Homestead
+      （4）Homestead 目录中执行 bash init.sh 命令来创建 Homestead.yaml 配置文件
+      （5）配置Vagrant  
+            sites:
+                  - map: homestead.app
+                  to: /home/vagrant/Code/Laravel/public
+                  hhvm: true
+            PS: to：的路径是Vagrant虚拟机的路径，并且Laravel目录下要创建Laravel项目。还要在hosts文件添加 
+                192.168.10.10  homestead.app    ⚠️ homestead.app要和sites-map一致
+                        
+
+      vagrant 相关命令
+            $ vagrant init      # 初始化
+            $ vagrant up        # 启动虚拟机
+            $ vagrant halt      # 关闭虚拟机
+            $ vagrant reload    # 重启虚拟机
+            $ vagrant ssh       # SSH 至虚拟机
+            $ vagrant suspend   # 挂起虚拟机
+            $ vagrant resume    # 唤醒虚拟机
+            $ vagrant status    # 查看虚拟机运行状态
+            $ vagrant destroy   # 销毁当前虚拟机
+            #box管理命令
+            $ vagrant box list    # 查看本地box列表
+            $ vagrant box add     # 添加box到列表
+            $ vagrant box remove  # 从box列表移除 
+            #修改 Homestead.yml后重启虚拟机
+            $vagrant global-status  得到一串字符status   vagrant provision 965047f
+      
+4    
       
       
       
